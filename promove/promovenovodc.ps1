@@ -16,6 +16,10 @@ New-NetIPAddress –InterfaceIndex 12 –IPAddress 192.168.2.3 -PrefixLength 24 
 
 netsh firewall set opmode mode=DISABLE exception=DISABLE profile=ALL
 
+ou usage Powershell
+
+Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False
+
 #passo 2.3 Desativar IPV6 
 
 Disable-NetAdapterBinding -InterfaceDescription (Get-NetAdapterBinding -componentid ms_tcpip6).InterfaceDescription -ComponentID ms_tcpip6
